@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Its a site</title>
+  <link rel="stylesheet" type="text/css" href="dom1.css">
+</head>
+<body>
+<div id="main" class="main">
+
+  <div id="loginPart" class="loginPart">
+    <div class="login">LOGIN :</div>
+    <input type="text" width="400" id="login">
+  </div>
+
+  <div class="passPart">
+    <div class="password">PASSWORD :</div>
+    <input type="password" width="400" id="password">
+  </div>
+
+  <div>
+    <button onclick="check()">SIGN IN</button>
+  </div>
+
+</div>
+</body>
+<script type="text/javascript">
+  function check() {
+    login = document.getElementById('login')
+    password = document.getElementById('password')
+
+    if (login.value==="user" && password.value==="admin") {
+      document.getElementById('main').innerHTML = "<h1>You have been successfully authenticated</h1>"
+    } else {
+      login.style = "border: red solid 1px"
+      password.style = "border: red solid 1px"
+    }
+  }
+</script>
+</html>

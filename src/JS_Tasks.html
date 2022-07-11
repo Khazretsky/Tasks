@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Its a site</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div>
+        <button onclick="minus()" class="minus">-</button>
+    </div>
+
+    <div class="num" id="num">
+        0
+    </div>
+
+    <div>
+        <button onclick="plus()" class="plus">+</button>
+    </div>
+
+</div>
+</body>
+    <script type="text/javascript">
+        function plus() {
+            var a = (parseInt(num.innerText))
+            a += 1
+            document.getElementById('num').innerText = a
+        }
+        
+        function minus() {
+            var a = (parseInt(num.innerText))
+            a -= 1
+            document.getElementById('num').innerText = a
+        }
+    </script>
+</html>
