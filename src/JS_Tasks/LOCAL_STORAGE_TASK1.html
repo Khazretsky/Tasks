@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>REGISTRATION FORM</title>
+  <style>
+    .container{
+      margin: 0;
+      padding: 40px;
+      border: 2px darkgrey solid;
+      width: 500px;
+    }
+    .container div{
+      margin-left: 30px;
+      padding: 9px;
+    }
+    .nameDiv input{
+      margin-left: 80px;
+      height: 21px;
+    }
+    .snameDiv input{
+      margin-left: 49px;
+      height: 21px;
+    }
+    .ctDiv select{
+      margin-left: 52px;
+      width: 171px;
+      height: 28px;
+    }
+    .phDiv input{
+      margin-left: 2px;
+      height: 21px;
+    }
+    .butts{
+      display: flex;
+    }
+    .butts button{
+      height: 37px;
+    }
+    .regButt{
+      width: 100px;
+      background-color: black;
+      color: whitesmoke;
+    }
+    .drButt{
+      width: 140px;
+      background-color: grey;
+      color: whitesmoke;
+    }
+
+  </style>
+</head>
+<body onload="load()">
+<div class="container" id="container">
+  <div class="nameDiv" id="nameDiv">
+    NAME :
+    <input id="nameId" type="text">
+  </div>
+
+  <div class="snameDiv" id="snameDiv">
+    SURNAME :
+    <input id="snameId" type="text">
+  </div>
+
+  <div class="ctDiv" id="ctDiv">
+    COUNTRY :
+    <select id="ctId">
+      <option>Qazaqstan</option>
+      <option>Russia</option>
+      <option>Katmandu</option>
+      <option>Africa</option>
+      <option>UAE</option>
+    </select>
+  </div>
+
+  <div class="phDiv" id="phDiv">
+    PHONE NUMBER :
+    <input id="phId" type="text">
+  </div>
+
+  <div class="butts">
+    <div>
+      <button class="regButt" id="regButt">REGISTER</button>
+    </div>
+    <div>
+      <button class="drButt" id="drButt" onclick="save()">SAVE TO DRAFT</button>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  function save() {
+    name = document.getElementById("nameId").value
+    surname = document.getElementById("snameId").value
+    country = document.getElementById("ctId").value
+    phone = document.getElementById("phId").value
+
+    localStorage.setItem("name", name)
+    localStorage.setItem("surname", surname)
+    localStorage.setItem("country", country)
+    localStorage.setItem("phone", phone)
+  }
+
+  function load() {
+    document.getElementById("nameId").value = localStorage.getItem("name")
+    document.getElementById("snameId").value = localStorage.getItem("surname")
+    document.getElementById("ctId").value = localStorage.getItem("country")
+    document.getElementById("phId").value = localStorage.getItem("phone")
+  }
+</script>
+</html>
